@@ -1,7 +1,10 @@
+import { Header } from '@/presentation/components';
+
 export default function BlogPage() {
   return (
-    <div className="h-full screen ">
-      <h1>Hello Page</h1>
-    </div>
+    <>
+      <Header />
+      <div className="flex-1 screen">p</div>
+    </>
   );
 }

@@ -4,6 +4,6 @@
 
 @layer components {
   .screen {
-    @apply max-w-screen-xl flex flex-wrap justify-between mx-auto w-full p-4 md:p-6;
+    @apply max-w-screen-xl flex flex-wrap justify-between mx-auto w-full p-4 md:p-8;
   }
 }
