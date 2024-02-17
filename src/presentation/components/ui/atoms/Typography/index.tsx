@@ -29,22 +29,20 @@ interface Props
   color: Color;
   textAlign: TextAlign;
   fontWeight: FontWeight;
-  fontSize: Size<
-    ValidSize,
-    | 'xs'
-    | 'sm'
-    | 'base'
-    | 'lg'
-    | 'xl'
-    | '2xl'
-    | '3xl'
-    | '4xl'
-    | '5xl'
-    | '6xl'
-    | '7xl'
-    | '8xl'
-    | '9xl'
-  >;
+  fontSize:
+    | 'text-xs'
+    | 'text-sm'
+    | 'text-base'
+    | 'text-lg'
+    | 'text-xl'
+    | 'text-2xl'
+    | 'text-3xl'
+    | 'text-4xl'
+    | 'text-5xl'
+    | 'text-6xl'
+    | 'text-7xl'
+    | 'text-8xl'
+    | 'text-9xl';
   elementTextType: ElementTextType;
 }
 export interface TypographyProps extends Partial<Props> {
@@ -56,7 +54,7 @@ export const Typography: React.FC<TypographyProps> = ({
   className = '',
   color,
   fontWeight = 'normal',
-  fontSize = 'md',
+  fontSize = 'text-sm',
   style,
   textAlign,
   elementTextType = 'span',
@@ -65,7 +63,7 @@ export const Typography: React.FC<TypographyProps> = ({
   createElement(
     elementTextType,
     {
-      className: `text-${fontSize} font-${fontWeight} ${className}`,
+      className: `${fontSize} font-${fontWeight} ${className}`,
       style: {
         textAlign,
         color,

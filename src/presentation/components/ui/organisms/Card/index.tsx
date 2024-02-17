@@ -1,23 +1,21 @@
 'use client';
-import Image from 'next/image';
 import React, { useEffect } from 'react';
+import Image from 'next/image';
 import { Text, Title, Typography } from '../../atoms';
-import { GetBlogUserCase } from '@/core/use-cases/web/get.blog.user-case';
-import { BlogDataSourceMysql } from '@/infrestructure/datasources';
-import prisma from '@/common/data/prisma.client';
-import { BlogRepositoryMysql } from '@/infrestructure/repositories';
+import { BlogEntity } from '@/core/entities';
+import { useAppDispatch } from '../../../../store/hooks/index';
+import { setBlog } from '@/presentation/store/slices/web/web-slice';
 
-const getBlog = async () => {
-  const daataSourcel = new BlogDataSourceMysql();
-  const repository = new BlogRepositoryMysql(daataSourcel);
+interface CardProps {
+  blogEntity: BlogEntity[];
+}
 
-  const response = await new GetBlogUserCase(repository).execute();
-  console.log('::::::::::::Card::::::::::::::', response);
-  return response;
-};
+export const Card: React.FC<CardProps> = ({ blogEntity }) => {
+  const dispatch = useAppDispatch();
 
-export const Card = async () => {
-  const response = await getBlog();
+  useEffect(() => {
+    dispatch(setBlog(blogEntity));
+  }, []);
 
   return (
     <div className="max-w-xs flex flex-col gap-5 flex-1">
@@ -31,15 +29,15 @@ export const Card = async () => {
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-2">
           <header>
-            <Title fontSize="lg">Card Title</Title>
+            <Title fontSize="text-lg">Card Title</Title>
             <Typography>Icon</Typography>
           </header>
 
-          <Text fontSize="base">Card Description</Text>
+          <Text fontSize="text-base">Card Description</Text>
         </div>
         <div>
-          <Text fontSize="base">Card Description</Text>
-          <Text fontSize="base">Card Description</Text>
+          <Text fontSize="text-base">Card Description</Text>
+          <Text fontSize="text-base">Card Description</Text>
         </div>
       </div>
     </div>

@@ -1,9 +1,8 @@
-export class BlogEntity {
-  constructor(
-    public title: string,
-    public author: string,
-    public content: string,
-    public imgUrl: string,
-    public dateOfPublication: string
-  ) {}
+export interface BlogEntity {
+  id: string;
+  title: string;
+  author: string;
+  content: string;
+  imgUrl: string;
+  dateOfPublication: string;
 }

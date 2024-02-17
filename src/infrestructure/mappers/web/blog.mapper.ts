@@ -3,11 +3,18 @@ import { BlogEntity } from '@/core/entities';
 
 export class BlogMapper {
   static toEntity(blogDto: Record<string, any>): BlogEntity {
-    const { title, author, content, imgUrl, createdAt } = blogDto;
+    const { title, author, content, imgUrl, createdAt, id } = blogDto;
 
     if ([!title, !author, !content].includes(true))
       throw new Error('Title, author and content are required');
 
-    return new BlogEntity(title, author, content, imgUrl, date.DMY(createdAt));
+    return {
+      id,
+      title,
+      author,
+      content,
+      imgUrl,
+      dateOfPublication: date.DMY(createdAt),
+    };
   }
 }

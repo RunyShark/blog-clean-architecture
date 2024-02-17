@@ -6,6 +6,4 @@ import { Provider } from 'react-redux';
 
 export const ReduxProvider: React.FC<Pick<BaseComponentProps, 'children'>> = ({
   children,
-}) => {
-  return <Provider store={store}>{children}</Provider>;
-};
+}) => <Provider store={store}>{children}</Provider>;
