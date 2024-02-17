@@ -6,6 +6,7 @@ interface BlogData {
   author: string;
   dateOfPublication: string;
   content: string;
+  imgUrl?: string;
 }
 
 interface FetchControl {
