@@ -5,8 +5,9 @@ import { IoSearch } from 'react-icons/io5';
 export const Search = () => {
   const [input, setInput] = useState<string>('');
 
-  const onChange = (event: React.ChangeEvent<HTMLInputElement>) =>
+  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInput(event.target.value);
+  };
 
   const handlerSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
