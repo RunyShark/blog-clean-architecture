@@ -1,4 +1,4 @@
-import { Header } from '@/presentation/components';
+import { Button, Header } from '@/presentation/components';
 
 export default function BlogPage() {
   return (
@@ -11,6 +11,7 @@ export default function BlogPage() {
           hic dolorem, quisquam tempore veritatis eveniet alias, sit explicabo
           beatae!
         </p>
+        <Button />
       </div>
     </>
   );
