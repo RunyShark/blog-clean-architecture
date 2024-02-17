@@ -3,17 +3,28 @@ import React from 'react';
 import Image from 'next/image';
 import { Text, Title, Typography } from '../../atoms';
 import { BlogEntity } from '@/core/entities';
+import { useAppDispatch } from '@/presentation/store';
+import Link from 'next/link';
+import { getByIdBlog } from '@/presentation/store/slices/web/web-slice';
 
 export const Card: React.FC<BlogEntity> = ({
+  id,
   author,
   content,
   dateOfPublication,
   imgUrl,
   title,
 }) => {
+  const dispatch = useAppDispatch();
+  const selectedCard = () => dispatch(getByIdBlog({ id }));
+
   return (
     <div className="w-full flex justify-center">
-      <div className="md:max-w-xs flex flex-col gap-5 flex-1 cursor-pointer hover:scale-105  transition-all">
+      <Link
+        onClick={selectedCard}
+        className="md:max-w-xs flex flex-col gap-5 flex-1 cursor-pointer hover:scale-105  transition-all"
+        href={`details/${title}`}
+      >
         <Image
           width={300}
           height={300}
@@ -35,7 +46,7 @@ export const Card: React.FC<BlogEntity> = ({
             <Text fontSize="text-base">{dateOfPublication}</Text>
           </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 };
