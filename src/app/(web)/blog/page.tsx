@@ -11,7 +11,9 @@ export default function BlogPage() {
           hic dolorem, quisquam tempore veritatis eveniet alias, sit explicabo
           beatae!
         </p>
-        <Button />
+        <Button iconLeft={undefined} iconRight={undefined}>
+          wenas
+        </Button>
       </div>
     </>
   );
