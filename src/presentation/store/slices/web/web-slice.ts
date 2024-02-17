@@ -6,7 +6,7 @@ interface FetchControl {
   loading: boolean;
   error: boolean;
   errorMessage: string;
-  offline: boolean;
+  isOnline: boolean;
 }
 
 interface InitialState {
@@ -29,7 +29,7 @@ const initialState: InitialState = {
     loading: false,
     error: false,
     errorMessage: '',
-    offline: false,
+    isOnline: false,
   },
 };
 
@@ -53,8 +53,11 @@ export const webSlice = createSlice({
       );
     },
 
-    setOfflineState: (state, { payload }: PayloadAction<boolean>) => {
-      state.fetchControl.offline = payload;
+    setInternetConnectionState: (
+      state,
+      { payload }: PayloadAction<boolean>
+    ) => {
+      state.fetchControl.isOnline = payload;
     },
 
     updateBlogData: (state, { payload }: PayloadAction<BlogEntity>) => {
@@ -64,10 +67,12 @@ export const webSlice = createSlice({
     setLoadingState: (state, action: PayloadAction<boolean>) => {
       state.fetchControl.loading = action.payload;
     },
+
     setErrorState: (state, { payload }: PayloadAction<{ message: string }>) => {
       state.fetchControl.error = true;
       state.fetchControl.errorMessage = payload.message;
     },
+
     resetErrorState: (state) => {
       state.fetchControl.error = false;
       state.fetchControl.errorMessage = '';
@@ -81,7 +86,7 @@ export const {
   setLoadingState,
   setErrorState,
   resetErrorState,
-  setOfflineState,
+  setInternetConnectionState,
   getByIdBlog,
 } = webSlice.actions;
 
