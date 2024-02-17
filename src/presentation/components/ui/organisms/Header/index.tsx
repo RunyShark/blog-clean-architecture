@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import styles from './header.module.scss';
-import { Typography } from '../../atoms';
+import { Text, Title, Typography } from '../../atoms';
 import { useSlider } from './hook/useSlider';
 
 export const Header = () => {
@@ -14,15 +14,13 @@ export const Header = () => {
       <div className="w-full flex flex-col gap-16">
         <header className="flex flex-col gap-6">
           <div className="flex flex-col gap-3">
-            <Typography className={styles.slider__text}>Our blog</Typography>
-            <Typography className={styles.slider__text}>
-              Resources and insights
-            </Typography>
+            <Typography>Our blog</Typography>
+            <Title>Resources and insights</Title>
           </div>
 
-          <Typography className={styles.slider__text}>
+          <Text>
             The latest industry news, interviews, technologies, and resources.
-          </Typography>
+          </Text>
         </header>
 
         <div
@@ -38,10 +36,8 @@ export const Header = () => {
             <div className="flex-1" />
             <div className="backdrop-blur-sm">
               <div className="screen flex flex-col gap-4">
-                <Typography className={styles.slider__text}>
-                  {initialSlideImages[setImage].title}
-                </Typography>
-                <Typography className={styles.slider__text}>
+                <Text color="white">{initialSlideImages[setImage].title}</Text>
+                <Typography fontSize="base" className={styles.slider__text}>
                   {initialSlideImages[setImage].description}
                 </Typography>
               </div>

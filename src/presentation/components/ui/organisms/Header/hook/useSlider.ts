@@ -52,6 +52,7 @@ export const useSlider = (props: Partial<SliderProps>) => {
     }, props.time || 5000);
 
     return () => clearTimeout(interval);
-  }, [setImage]);
+  }, [props.time, setImage]);
+
   return { setImage, initialSlideImages, setSetImage };
 };

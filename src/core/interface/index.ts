@@ -18,7 +18,8 @@ export type ValidSize =
   | '6xl'
   | '7xl'
   | '8xl'
-  | '9xl';
+  | '9xl'
+  | 'base';
 
 export type Size<Size, K extends Size> = K;
 export type Type = React.HTMLInputTypeAttribute;
