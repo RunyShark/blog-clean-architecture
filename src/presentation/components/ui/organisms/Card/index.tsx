@@ -1,8 +1,24 @@
+'use client';
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Text, Title, Typography } from '../../atoms';
+import { GetBlogUserCase } from '@/core/use-cases/web/get.blog.user-case';
+import { BlogDataSourceMysql } from '@/infrestructure/datasources';
+import prisma from '@/common/data/prisma.client';
+import { BlogRepositoryMysql } from '@/infrestructure/repositories';
 
-export const Card = () => {
+const getBlog = async () => {
+  const daataSourcel = new BlogDataSourceMysql();
+  const repository = new BlogRepositoryMysql(daataSourcel);
+
+  const response = await new GetBlogUserCase(repository).execute();
+  console.log('::::::::::::Card::::::::::::::', response);
+  return response;
+};
+
+export const Card = async () => {
+  const response = await getBlog();
+
   return (
     <div className="max-w-xs flex flex-col gap-5 flex-1">
       <Image

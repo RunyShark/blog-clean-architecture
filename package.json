@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run prisma:deploy && next build",
     "start": "next start",
     "lint": "next lint",
-    "seed": "ts-node src/common/seed/seed.ts"
+    "seed": "ts-node src/common/seed/seed.ts",
+    "prisma:deploy": "npx prisma migrate deploy && prisma generate"
   },
   "dependencies": {
     "@prisma/client": "^5.9.1",
