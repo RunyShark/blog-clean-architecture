@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import Image from 'next/image';
 import { BlogEntity } from '@/core/entities';
 import { setBlog } from '@/presentation/store/slices/web/web-slice';
-import { useAppDispatch } from '@/presentation/store';
+import { useAppDispatch, useAppSelector } from '@/presentation/store';
 import { Card, Text, Title, Typography } from '../../ui';
 
 interface CardProps {
@@ -11,6 +11,7 @@ interface CardProps {
 }
 
 export const CardItem: React.FC<CardProps> = ({ blogEntity }) => {
+  const { blogData } = useAppSelector(({ web }) => web);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -19,7 +20,7 @@ export const CardItem: React.FC<CardProps> = ({ blogEntity }) => {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-16">
-      {blogEntity.map((blog) => (
+      {blogData.map((blog) => (
         <Card {...blog} key={blog.id} />
       ))}
     </div>
