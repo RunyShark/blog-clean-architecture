@@ -11,12 +11,23 @@ interface FetchControl {
 
 interface InitialState {
   blogData: BlogEntity[];
+  filterBlog: BlogEntity[];
   blogSelected: BlogEntity;
   fetchControl: FetchControl;
 }
 
 const initialState: InitialState = {
-  blogData: [],
+  blogData: [
+    {
+      author: '',
+      content: '',
+      dateOfPublication: '',
+      id: '',
+      imgUrl: '',
+      title: '',
+    },
+  ],
+  filterBlog: [],
   blogSelected: {
     author: '',
     content: '',
@@ -39,6 +50,7 @@ export const webSlice = createSlice({
   reducers: {
     setBlog: (state, { payload }: PayloadAction<BlogEntity[]>) => {
       state.blogData = payload;
+      state.filterBlog = payload;
     },
 
     getByIdBlog: (state, { payload }: PayloadAction<{ id: string }>) => {
@@ -48,7 +60,7 @@ export const webSlice = createSlice({
     },
 
     filterBlog: (state, { payload }: PayloadAction<string>) => {
-      state.blogData = state.blogData.filter((blog) =>
+      state.filterBlog = state.filterBlog.filter((blog) =>
         blog.title.toLowerCase().includes(payload.toLowerCase())
       );
     },
@@ -81,6 +93,7 @@ export const webSlice = createSlice({
 });
 
 export const {
+  filterBlog,
   setBlog,
   updateBlogData,
   setLoadingState,

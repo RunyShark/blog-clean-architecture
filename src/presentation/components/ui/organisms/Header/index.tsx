@@ -5,7 +5,7 @@ import { Text, Title, Typography } from '../../atoms';
 import { useSlider } from './hook/useSlider';
 
 export const Header = () => {
-  const { initialSlideImages, setImage } = useSlider({
+  const { blogData, setImage } = useSlider({
     time: 4500,
   });
 
@@ -31,7 +31,7 @@ export const Header = () => {
           <div
             className={styles.slider__container}
             style={{
-              backgroundImage: `url(${initialSlideImages[setImage].imgUrl})`,
+              backgroundImage: `url(${blogData[setImage].imgUrl})`,
             }}
           />
           <section className={`${styles.slider__headerContainer}`}>
@@ -39,20 +39,20 @@ export const Header = () => {
             <div className="backdrop-blur-sm bg-[#000000b2]">
               <div className="screen flex flex-col gap-4">
                 <Title color="white" fontSize="text-xl">
-                  {initialSlideImages[setImage].title}
+                  {blogData[setImage].title}
                 </Title>
                 <Typography
                   fontSize="text-base"
                   fontWeight="font-semibold"
                   className="text-white"
                 >
-                  {initialSlideImages[setImage].author}
+                  {blogData[setImage].author}
                 </Typography>
                 <Typography
                   fontSize="text-base"
                   className={`${styles.slider__description} ${styles.slider__lineClamp2} text-gray-300`}
                 >
-                  {initialSlideImages[setImage].content}
+                  {blogData[setImage].content}
                 </Typography>
               </div>
             </div>

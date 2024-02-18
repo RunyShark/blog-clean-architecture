@@ -1,3 +1,4 @@
+import { BlogEntity } from '@/core/entities';
 import { useAppSelector } from '@/presentation/store';
 import { useEffect, useState } from 'react';
 
@@ -7,6 +8,7 @@ interface SliderProps {
 
 export const useSlider = (props: Partial<SliderProps>) => {
   const { blogData } = useAppSelector(({ web }) => web);
+
   const [setImage, setSetImage] = useState(0);
 
   useEffect(() => {
@@ -16,11 +18,11 @@ export const useSlider = (props: Partial<SliderProps>) => {
     }, props.time || 5000);
 
     return () => clearTimeout(interval);
-  }, [props.time, setImage]);
+  }, [props.time, setImage, blogData]);
 
   return {
     setImage,
-    initialSlideImages: blogData,
+    blogData,
     setSetImage,
   };
 };

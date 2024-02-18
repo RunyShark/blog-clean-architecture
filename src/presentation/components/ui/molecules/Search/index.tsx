@@ -2,8 +2,11 @@
 import React, { useState } from 'react';
 import { IoSearch } from 'react-icons/io5';
 import { Title } from '../../atoms';
+import { useAppDispatch } from '@/presentation/store';
+import { filterBlog } from '@/presentation/store/slices/web/web-slice';
 
 export const Search = () => {
+  const dispatch = useAppDispatch();
   const [input, setInput] = useState<string>('');
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -12,6 +15,7 @@ export const Search = () => {
 
   const handlerSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    dispatch(filterBlog(input));
     setInput('');
   };
 
