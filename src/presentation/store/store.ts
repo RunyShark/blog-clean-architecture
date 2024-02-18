@@ -1,19 +1,18 @@
+import storage from 'redux-persist/lib/storage';
+import { persistReducer, persistStore } from 'redux-persist';
 import { configureStore } from '@reduxjs/toolkit';
 import webSlice from './slices/web/web-slice';
 
-import storage from 'redux-persist/lib/storage';
-import { persistReducer, persistStore } from 'redux-persist';
-
 const persistConfig = {
-  key: 'root',
+  key: 'blog',
   storage,
 };
 
-const persistedReducer = persistReducer(persistConfig, webSlice);
+const web = persistReducer(persistConfig, webSlice);
 
 export const store = configureStore({
   reducer: {
-    web: persistedReducer,
+    web,
   },
   devTools: process.env.NEXT_PUBLIC_NODE_ENV !== 'production',
 });
