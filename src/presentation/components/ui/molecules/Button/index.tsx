@@ -1,6 +1,5 @@
 import { BaseComponentProps } from '@/core/interface';
 import React from 'react';
-import { Typography } from '../../atoms';
 
 interface IButtonPropsOptional extends BaseComponentProps {
   iconLeft: React.ReactElement;

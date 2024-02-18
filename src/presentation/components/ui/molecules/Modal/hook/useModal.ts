@@ -2,10 +2,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ModalProps } from '..';
 
-export const useModal = ({ isOpen, onClose }: ModalProps) => {
+export const useModal = ({ isOpen, onClose }: Omit<ModalProps, 'children'>) => {
   const modalContentRef = useRef<HTMLDivElement>(null);
-
-  const closeModal = () => onClose();
 
   useEffect(() => {
     if (isOpen) {
@@ -31,7 +29,6 @@ export const useModal = ({ isOpen, onClose }: ModalProps) => {
   };
 
   return {
-    closeModal,
     handleOutsideClick,
     modalContentRef,
   };

@@ -14,7 +14,11 @@ export const Header = () => {
       <div className="w-full flex flex-col gap-16">
         <header className="flex flex-col gap-6">
           <div className="flex flex-col gap-3">
-            <Typography>Our blog</Typography>
+            <span className="py-1 ps-1.5 pe-2 inline-flex items-center gap-x-1 text-xs font-medium rounded-full bg-teal-100 text-teal-800 dark:bg-teal-500/10 dark:text-teal-500 w-16">
+              <span className="w-1.5 h-1.5 inline-block bg-teal-800 rounded-full dark:bg-teal-500"></span>
+              <Typography>Blog</Typography>
+            </span>
+
             <Title>Resources and insights</Title>
           </div>
 
