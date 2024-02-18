@@ -12,10 +12,12 @@ interface LogoProps extends Omit<BaseComponentProps, 'children'> {
 export const Logo: React.FC<LogoProps> = ({ src, title = ' Blog' }) => (
   <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
     <Image
-      src={src}
+      src={
+        'https://res.cloudinary.com/runyshark1/image/upload/v1707709938/4XCW_utukec.gif'
+      }
       width={300}
       height={300}
-      className="h-10 object-contain w-10 object-center"
+      className="object-contain w-20 h-14 object-center"
       alt="logo"
     />
     <Title className="self-center text-2xl font-semibold whitespace-nowrap text-white">
