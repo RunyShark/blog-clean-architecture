@@ -28,7 +28,7 @@ export const Card: React.FC<BlogEntity> = ({
         <Image
           width={300}
           height={300}
-          className="w-full h-60 object-cover rounded-lg"
+          className="w-full h-60 object-cover rounded-radius-2xl"
           src={imgUrl}
           alt="placeholder"
         />
