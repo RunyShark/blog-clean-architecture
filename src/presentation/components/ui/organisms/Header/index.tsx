@@ -37,7 +37,10 @@ export const Header = () => {
             <div className="backdrop-blur-sm">
               <div className="screen flex flex-col gap-4">
                 <Text color="white">{initialSlideImages[setImage].title}</Text>
-                <Typography fontSize="base" className={styles.slider__text}>
+                <Typography
+                  fontSize="text-base"
+                  className={styles.slider__text}
+                >
                   {initialSlideImages[setImage].description}
                 </Typography>
               </div>

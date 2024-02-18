@@ -1,10 +1,10 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Text, Title, Typography } from '../../atoms';
 import { BlogEntity } from '@/core/entities';
 import { useAppDispatch } from '@/presentation/store';
-import Link from 'next/link';
 import { getByIdBlog } from '@/presentation/store/slices/web/web-slice';
 
 export const Card: React.FC<BlogEntity> = ({

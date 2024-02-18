@@ -28,7 +28,7 @@ export const Button: React.FC<ButtonProps> = ({
       <span className="absolute inset-0 w-full h-full transition duration-200 ease-out rounded-radius-md bg-gradient-to-br to-purple-600 from-blue-500"></span>
       <div className="relative flex flex-row justify-between gap-5">
         {iconLeft && iconLeft}
-        {children}
+        <span className="w-full">{children}</span>
         {iconRight && iconRight}
       </div>
     </button>
