@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { v2 as cloudinary } from 'cloudinary';
 
-//These environment variables were left by mistake so that you can test; this is very bad practice, environment variables should be used.
+//!!These environment variables were left by mistake so that you can test; this is very bad practice, environment variables should be used.
 cloudinary.config({
   cloud_name: 'runyshark1',
   api_key: '633923928649864',

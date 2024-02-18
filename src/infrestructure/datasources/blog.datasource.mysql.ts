@@ -13,7 +13,9 @@ export class BlogDataSourceMysql implements BlogDataSource {
   }
 
   async getBlogs(): Promise<BlogEntity[]> {
-    const blogs = await this.db.blog.findMany();
+    const blogs = await this.db.blog.findMany({
+      orderBy: { createdAt: 'desc' },
+    });
 
     return blogs.map(BlogMapper.toEntity);
   }
