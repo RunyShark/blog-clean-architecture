@@ -21,9 +21,9 @@ type Inputs = {
 };
 const schema = yup
   .object({
-    title: yup.string().required('Title is required'),
-    author: yup.string().required('Author is required'),
-    content: yup.string().required('Content is required'),
+    title: yup.string().required('El titulo es requerido'),
+    author: yup.string().required('El autor es requerido'),
+    content: yup.string().required('El contenido es requerido'),
   })
   .required();
 
@@ -140,7 +140,7 @@ export const AddNewBlogForm: React.FC<AddNewBlogFormProps> = ({
             </div>
             <div>
               <label className="block mb-2 text-sm font-medium text-gray-800">
-                Title
+                Titulo
               </label>
               <div className="relative">
                 <input
@@ -153,7 +153,7 @@ export const AddNewBlogForm: React.FC<AddNewBlogFormProps> = ({
             </div>
             <div>
               <label className="block mb-2 text-sm font-medium text-gray-800">
-                author
+                Autor
               </label>
               <div className="relative">
                 <input
@@ -166,7 +166,7 @@ export const AddNewBlogForm: React.FC<AddNewBlogFormProps> = ({
             </div>
             <div>
               <label className="block mb-2 text-sm font-medium text-gray-800">
-                content
+                Contenido
               </label>
               <div className="relative">
                 <textarea
