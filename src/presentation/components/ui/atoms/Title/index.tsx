@@ -7,7 +7,7 @@ export const Title: React.FC<TitleProps> = ({ children, ...props }) => (
   <Typography
     elementTextType="h1"
     fontSize="text-5xl"
-    fontWeight="bold"
+    fontWeight="font-bold"
     {...props}
   >
     {children}

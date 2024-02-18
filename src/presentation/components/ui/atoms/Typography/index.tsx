@@ -10,15 +10,15 @@ import React, { createElement } from 'react';
 type ElementTextType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span';
 
 type FontWeight =
-  | 'thin'
-  | 'extralight'
-  | 'light'
-  | 'normal'
-  | 'medium'
-  | 'semibold'
-  | 'bold'
-  | 'extrabold'
-  | 'black';
+  | 'font-thin'
+  | 'font-extralight'
+  | 'font-light'
+  | 'font-normal'
+  | 'font-medium'
+  | 'font-semibold'
+  | 'font-bold'
+  | 'font-extrabold'
+  | 'font-black';
 
 interface Props
   extends BaseComponentProps,
@@ -53,7 +53,7 @@ export const Typography: React.FC<TypographyProps> = ({
   children,
   className = '',
   color,
-  fontWeight = 'normal',
+  fontWeight = 'font-normal',
   fontSize = 'text-sm',
   style,
   textAlign,
@@ -63,7 +63,7 @@ export const Typography: React.FC<TypographyProps> = ({
   createElement(
     elementTextType,
     {
-      className: `${fontSize} font-${fontWeight} ${className}`,
+      className: `${fontSize} ${fontWeight} ${className}`,
       style: {
         textAlign,
         color,

@@ -15,7 +15,7 @@ export const Details = () => {
       <div className="flex gap-9 w-320 justify-between">
         <div className="w-full">
           <header className="h-full flex flex-col gap-10 justify-center">
-            <Title>{title}</Title>
+            <Title className="font-bold">{title}</Title>
             <div>
               <div className="flex-1">
                 <h2>{author}</h2>
