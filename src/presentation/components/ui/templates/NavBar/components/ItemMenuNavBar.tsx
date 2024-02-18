@@ -13,7 +13,7 @@ export const ItemMenuNavBar: React.FC<Routes> = ({ name, path }) => {
         href={path}
         className={`${styles.nav__item} ${
           path === onPath
-            ? 'text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent'
+            ? 'text-white rounded md:text-blue-500 bg-blue-600 md:bg-transparent'
             : 'text-white'
         }`}
         aria-current="page"

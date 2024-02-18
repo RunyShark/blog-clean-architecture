@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { BaseComponentProps } from '@/core/interface';
-import { Typography } from '../../atoms';
+import { Title, Typography } from '../../atoms';
 
 interface LogoProps extends Omit<BaseComponentProps, 'children'> {
   src: string;
@@ -18,8 +18,8 @@ export const Logo: React.FC<LogoProps> = ({ src, title = ' Blog' }) => (
       className="h-10 object-contain w-10 object-center"
       alt="logo"
     />
-    <Typography className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+    <Title className="self-center text-2xl font-semibold whitespace-nowrap text-white">
       {title}
-    </Typography>
+    </Title>
   </Link>
 );

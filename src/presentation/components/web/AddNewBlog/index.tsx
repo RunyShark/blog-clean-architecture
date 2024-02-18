@@ -26,7 +26,7 @@ export const AddNewBlog = () => {
       </Button>
       <Modal isOpen={isOpenModal} onClose={closeModal}>
         <Title fontSize="text-xl">Nuevo blog</Title>
-        <hr className="my-2 border-gray-200 sm:mx-auto dark:border-gray-700" />
+        <hr className="my-2 sm:mx-auto border-gray-700" />
         <AddNewBlogForm onCloseModal={closeModal} />
       </Modal>
     </div>

@@ -4,7 +4,7 @@ import { Typography, TypographyProps } from '../Typography';
 interface TextProps extends TypographyProps {}
 
 export const Text: React.FC<TextProps> = ({ children, ...props }) => (
-  <Typography elementTextType="p" fontSize="text-xl" color="#475467" {...props}>
+  <Typography elementTextType="p" fontSize="text-xl" {...props}>
     {children}
   </Typography>
 );

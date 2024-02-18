@@ -5,10 +5,10 @@ import Link from 'next/link';
 export const RoutesFooter = () => (
   <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
     <div>
-      <Typography className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+      <Typography className="mb-6 text-sm font-semibold  uppercase text-white">
         Resources
       </Typography>
-      <ul className="text-gray-500 dark:text-gray-400 font-medium">
+      <ul className="text-gray-400 font-medium">
         <li className="mb-4">
           <Link href="/blog" className="hover:underline">
             Home
@@ -17,10 +17,10 @@ export const RoutesFooter = () => (
       </ul>
     </div>
     <div>
-      <Typography className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+      <Typography className="mb-6 text-sm font-semibold uppercase text-white">
         Follow us
       </Typography>
-      <ul className="text-gray-500 dark:text-gray-400 font-medium">
+      <ul className=" text-gray-400 font-medium">
         <li className="mb-4">
           <Link
             target="_blank"

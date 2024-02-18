@@ -85,13 +85,13 @@ export const AddNewBlogForm: React.FC<AddNewBlogFormProps> = ({
             <div>
               <label
                 htmlFor="hs-pro-dalpn"
-                className="block mb-2 text-sm font-medium text-gray-800"
+                className="block mb-2 text-sm font-medium text-black"
               >
                 Foto o gift blog
               </label>
 
               <div className="mt-2 flex items-center gap-x-3">
-                <span className="flex justify-center items-center h-20 w-20 border-2 border-dotted border-gray-300 text-gray-400 rounded-full dark:border-neutral-700 dark:text-neutral-600">
+                <span className="flex justify-center items-center h-20 w-20 border-2 border-dotted  rounded-full border-neutral-700 text-neutral-600">
                   {updatePhoto ? (
                     <Image
                       src={updatePhoto}
@@ -139,7 +139,7 @@ export const AddNewBlogForm: React.FC<AddNewBlogFormProps> = ({
               </div>
             </div>
             <div>
-              <label className="block mb-2 text-sm font-medium text-gray-800">
+              <label className="block mb-2 text-sm font-medium text-black">
                 Titulo
               </label>
               <div className="relative">
@@ -152,7 +152,7 @@ export const AddNewBlogForm: React.FC<AddNewBlogFormProps> = ({
               </div>
             </div>
             <div>
-              <label className="block mb-2 text-sm font-medium text-gray-800">
+              <label className="block mb-2 text-sm font-medium text-black">
                 Autor
               </label>
               <div className="relative">
@@ -165,7 +165,7 @@ export const AddNewBlogForm: React.FC<AddNewBlogFormProps> = ({
               </div>
             </div>
             <div>
-              <label className="block mb-2 text-sm font-medium text-gray-800">
+              <label className="block mb-2 text-sm font-medium text-black">
                 Contenido
               </label>
               <div className="relative">
@@ -184,7 +184,7 @@ export const AddNewBlogForm: React.FC<AddNewBlogFormProps> = ({
           <button
             onClick={onCloseModal}
             type="button"
-            className="px-5 py-2.5 h-10 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+            className="px-5 py-2.5 h-10 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border  shadow-sm disabled:opacity-50 disabled:pointer-events-none focus:outline-none  bg-neutral-800 border-neutral-700 text-neutral-300 hover:bg-neutral-700 focus:bg-neutral-700"
             data-hs-overlay="#hs-pro-dasadpm"
           >
             Cancel
