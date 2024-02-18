@@ -3,8 +3,12 @@ import React, { useState } from 'react';
 import { Button, Modal, Title } from '../../ui';
 import { IoHome } from 'react-icons/io5';
 import { AddNewBlogForm } from './components';
+import { useAppSelector } from '@/presentation/store';
 
 export const AddNewBlog = () => {
+  const {
+    fetchControl: { isOnline },
+  } = useAppSelector(({ web }) => web);
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   const closeModal = () => setIsOpenModal(false);
@@ -13,6 +17,7 @@ export const AddNewBlog = () => {
   return (
     <div>
       <Button
+        disabled={!isOnline}
         className="w-60"
         iconLeft={<IoHome size={25} />}
         onClick={openModal}
