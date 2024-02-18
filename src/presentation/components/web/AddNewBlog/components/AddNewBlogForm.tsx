@@ -1,5 +1,5 @@
 import { Button, Title } from '@/presentation/components/ui';
-import React, { ChangeEventHandler, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { IoCloudUpload } from 'react-icons/io5';
 
@@ -7,12 +7,13 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import Image from 'next/image';
 import { usePhoto } from '@/presentation/hooks';
-import { createNewBlogAction } from '@/presentation/actions/web/create.new.blog-action';
+
 import { useAppDispatch, useAppSelector } from '@/presentation/store';
 import {
   setLoadingState,
   updateBlogData,
 } from '@/presentation/store/slices/web/web-slice';
+import { createNewBlogAction } from '@/presentation/actions/web';
 
 type Inputs = {
   title: string;
@@ -52,7 +53,21 @@ export const AddNewBlogForm: React.FC<AddNewBlogFormProps> = ({
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     dispatch(setLoadingState(true));
     try {
+      let imgUrl = '';
+      if (file) {
+        const body = new FormData();
+        body.append('file', file);
+
+        const response = await fetch('/api/upload', {
+          method: 'POST',
+          body,
+        });
+        const data = await response.json();
+        imgUrl = data.data;
+      }
+
       const response = await createNewBlogAction({
+        imgUrl,
         ...data,
       });
 
@@ -102,7 +117,8 @@ export const AddNewBlogForm: React.FC<AddNewBlogFormProps> = ({
                     />
                   ) : (
                     <svg
-                      className="flex-shrink-0 w-7 h-7"
+                      onClick={upLoadPhoto}
+                      className="flex-shrink-0 w-7 h-7 cursor-pointer"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
                       height="24"

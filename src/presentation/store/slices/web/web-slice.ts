@@ -84,7 +84,7 @@ export const webSlice = createSlice({
     },
 
     updateBlogData: (state, { payload }: PayloadAction<BlogEntity>) => {
-      state.blogData.unshift(payload);
+      state.filterBlog.unshift(payload);
     },
 
     setLoadingState: (state, action: PayloadAction<boolean>) => {
