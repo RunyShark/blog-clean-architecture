@@ -10,4 +10,11 @@
   &__headerContainer {
     @apply absolute top-0 left-0 w-full h-full flex  z-10 text-white flex-col;
   }
+
+  &__lineClamp2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
 }

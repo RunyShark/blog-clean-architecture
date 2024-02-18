@@ -34,14 +34,6 @@ module.exports = {
         'ring-error-shadow-xs':
           ' 0px 0px 0px 4px rgba(240, 68, 56, 0.24), 0px 1px 2px 0px rgba(16, 24, 40, 0.05)',
       },
-      padding: {
-        'container-padding-mobile': '16px',
-        'container-padding-desktop': '32px',
-        'container-max-width-desktop': '1,280px',
-      },
-      maxWidth: {
-        'paragraph-max-width': '720px',
-      },
       width: {
         'width-xxs': '320px',
         'width-xs': '384px',
@@ -68,39 +60,7 @@ module.exports = {
         'radius-4xl': '24px',
         'radius-full': '100%',
       },
-      spacing: {
-        120: '480px',
-        140: '560px',
-        160: '640px',
-        180: '720px',
-        192: '768px',
-        256: '1024px',
-        320: '1280px',
-        360: '1440px',
-      },
       colors: {
-        primary: {
-          100: '#cffafe',
-          200: '#a5f3fc',
-          300: '#67e8f9',
-          400: '#22d3ee',
-          500: '#06b6d4',
-          600: '#0891b2',
-          700: '#0e7490',
-          800: '#155e75',
-          900: '#164e63',
-        },
-        secondary: {
-          100: '#f0f5ff',
-          200: '#dbeafe',
-          300: '#bfdbfe',
-          400: '#93c5fd',
-          500: '#60a5fa',
-          600: '#3b82f6',
-          700: '#2563eb',
-          800: '#1d4ed8',
-          900: '#1e40af',
-        },
         tertiary: {
           100: '#f0fcf9',
           200: '#c6f6d5',

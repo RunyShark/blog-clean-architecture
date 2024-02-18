@@ -15,7 +15,7 @@ model Blog {
   title  String
   author String
 
-  content String
+  content String  @db.VarChar(9000)
   imgUrl  String? @default("https://res.cloudinary.com/runyshark1/image/upload/v1708179216/free-no-image-1771002-1505134_1_illdvv.png")
 
   createdAt DateTime @default(now())
