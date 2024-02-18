@@ -23,7 +23,7 @@ export const Card: React.FC<BlogEntity> = ({
     <div className="w-full flex justify-center ">
       <Link
         onClick={selectedCard}
-        className="md:max-w-xs flex flex-col  flex-1 cursor-pointer hover:scale-105  transition-all max-h-120 overflow-hidden"
+        className="md:max-w-xs flex flex-col  flex-1 cursor-pointer hover:scale-105  transition-all max-h-120   overflow-hidden"
         href={`details/${title}`}
       >
         <Image
@@ -33,7 +33,7 @@ export const Card: React.FC<BlogEntity> = ({
           src={imgUrl}
           alt="placeholder"
         />
-        <div className="flex flex-col gap-6 container mx-auto backdrop-blur-sm bg-[rgba(255,255,255,0.1)] p-4 rounded-bl-2xl rounded-br-2xl">
+        <div className="flex flex-col gap-6 justify-between container mx-auto backdrop-blur-sm bg-[rgba(255,255,255,0.1)] p-4 rounded-bl-2xl rounded-br-2xl h-60">
           <div className="flex flex-col gap-2">
             <header className="flex flex-row gap-2">
               <Title fontSize="text-lg">{title}</Title>
