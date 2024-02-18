@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { Button, Modal, Title } from '../../ui';
-import { IoHome } from 'react-icons/io5';
+import { IoAdd } from 'react-icons/io5';
 import { AddNewBlogForm } from './components';
 import { useAppSelector } from '@/presentation/store';
 
@@ -19,7 +19,7 @@ export const AddNewBlog = () => {
       <Button
         disabled={!isOnline}
         className="w-60"
-        iconLeft={<IoHome size={25} />}
+        iconLeft={<IoAdd size={25} />}
         onClick={openModal}
       >
         Agregar nuevo blog

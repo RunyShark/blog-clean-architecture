@@ -1,11 +1,17 @@
 'use client';
 import React, { useState } from 'react';
-import { IoSearch } from 'react-icons/io5';
+import { IoTrash, IoSearch } from 'react-icons/io5';
 import { Title } from '../../atoms';
 import { useAppDispatch } from '@/presentation/store';
-import { filterBlog } from '@/presentation/store/slices/web/web-slice';
+import {
+  clearFilter,
+  filterBlog,
+} from '@/presentation/store/slices/web/web-slice';
+import { Button } from '../Button';
+import { useAppSelector } from '../../../../store/hooks/index';
 
 export const Search = () => {
+  const { isActiveFilter } = useAppSelector(({ web }) => web);
   const dispatch = useAppDispatch();
   const [input, setInput] = useState<string>('');
 
@@ -19,10 +25,26 @@ export const Search = () => {
     setInput('');
   };
 
+  const clearFilters = () => {
+    dispatch(clearFilter());
+  };
+
   return (
     <form className="relative flex" onSubmit={handlerSubmit}>
       <div className="flex flex-col gap-4">
-        <Title fontSize="text-lg">Buscar blog</Title>
+        <div className="flex flex-row gap-6">
+          <Title fontSize="text-lg">Buscar blog</Title>
+          {isActiveFilter && (
+            <Button
+              className="max-w-48 h-11"
+              iconLeft={<IoTrash size={25} />}
+              onClick={clearFilters}
+            >
+              Eliminar filtros
+            </Button>
+          )}
+        </div>
+
         <div className="relative">
           <input
             type="text"

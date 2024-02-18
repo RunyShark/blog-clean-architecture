@@ -12,6 +12,7 @@ interface FetchControl {
 interface InitialState {
   blogData: BlogEntity[];
   filterBlog: BlogEntity[];
+  isActiveFilter: boolean;
   blogSelected: BlogEntity;
   fetchControl: FetchControl;
 }
@@ -27,6 +28,7 @@ const initialState: InitialState = {
       title: '',
     },
   ],
+  isActiveFilter: false,
   filterBlog: [],
   blogSelected: {
     author: '',
@@ -49,6 +51,7 @@ export const webSlice = createSlice({
   initialState,
   reducers: {
     setBlog: (state, { payload }: PayloadAction<BlogEntity[]>) => {
+      state.isActiveFilter = false;
       state.blogData = payload;
       state.filterBlog = payload;
     },
@@ -60,9 +63,17 @@ export const webSlice = createSlice({
     },
 
     filterBlog: (state, { payload }: PayloadAction<string>) => {
-      state.filterBlog = state.filterBlog.filter((blog) =>
-        blog.title.toLowerCase().includes(payload.toLowerCase())
-      );
+      state.isActiveFilter = true;
+      state.filterBlog = state.blogData.filter((blog) => {
+        if (blog.title.toLowerCase().includes(payload.toLowerCase()))
+          return true;
+
+        if (blog.author.toLowerCase().includes(payload.toLowerCase()))
+          return true;
+
+        if (blog.content.toLowerCase().includes(payload.toLowerCase()))
+          return true;
+      });
     },
 
     setInternetConnectionState: (
@@ -89,6 +100,11 @@ export const webSlice = createSlice({
       state.fetchControl.error = false;
       state.fetchControl.errorMessage = '';
     },
+
+    clearFilter: (state) => {
+      state.isActiveFilter = false;
+      state.filterBlog = state.blogData;
+    },
   },
 });
 
@@ -101,6 +117,7 @@ export const {
   resetErrorState,
   setInternetConnectionState,
   getByIdBlog,
+  clearFilter,
 } = webSlice.actions;
 
 export default webSlice.reducer;
