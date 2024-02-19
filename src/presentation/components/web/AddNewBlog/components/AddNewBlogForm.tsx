@@ -56,14 +56,20 @@ export const AddNewBlogForm: React.FC<AddNewBlogFormProps> = ({
       let imgUrl = '';
       if (file) {
         const body = new FormData();
+        body.append('upload_preset', 'next-blog');
         body.append('file', file);
 
-        const response = await fetch('/api/upload', {
-          method: 'POST',
-          body,
-        });
+        const response = await fetch(
+          'https://api.cloudinary.com/v1_1/runyshark1/upload',
+          {
+            method: 'POST',
+            body,
+            cache: 'no-cache',
+          }
+        );
         const data = await response.json();
-        imgUrl = data.data;
+
+        imgUrl = data.url;
       }
 
       const response = await createNewBlogAction({
