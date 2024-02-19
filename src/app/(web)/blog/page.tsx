@@ -37,7 +37,7 @@ export default function BlogPage() {
     <>
       <Header />
       <div className="flex-1 screen flex-col gap-16 mb-16">
-        <div className="flex justify-between">
+        <div className="flex justify-between flex-col gap-8 md:flex-row">
           <Search />
           <div className="flex flex-col justify-end">
             <AddNewBlog />
