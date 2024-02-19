@@ -6,8 +6,8 @@ export interface LocationBusProps {
 }
 
 interface OptionalProps {
-  height: number;
-  width: number;
+  height: number | string;
+  width: number | string;
   loop: boolean;
 }
 

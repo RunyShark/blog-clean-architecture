@@ -28,7 +28,7 @@ export const CardItem: React.FC<CardProps> = ({ blogEntity }) => {
           ))}
         </div>
       ) : (
-        <div className="grid grid-cols-1">
+        <div className="grid grid-cols-1 w-full">
           <div className="p-4 bg-[rgba(255,250,240,0.2)] text-warning-500 rounded-lg">
             <Title fontSize="text-lg">No se encontró resultado 😵‍💫</Title>
           </div>
@@ -36,8 +36,8 @@ export const CardItem: React.FC<CardProps> = ({ blogEntity }) => {
             lottiefile={Animation}
             autoplay
             loop={true}
-            width={600}
-            height={600}
+            width={300}
+            height={300}
           />
         </div>
       )}
