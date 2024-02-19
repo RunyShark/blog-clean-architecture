@@ -25,6 +25,7 @@ export const Card: React.FC<BlogEntity> = ({
         onClick={selectedCard}
         className="md:max-w-xs flex flex-col  flex-1 cursor-pointer hover:scale-105  transition-all max-h-120   overflow-hidden"
         href={`details/${title}`}
+        rel="preload"
       >
         <Image
           width={300}
@@ -32,6 +33,7 @@ export const Card: React.FC<BlogEntity> = ({
           className="w-full h-60 object-cover  rounded-tl-2xl rounded-tr-2xl "
           src={imgUrl}
           alt="placeholder"
+          priority
         />
         <div className="flex flex-col gap-6 justify-between container mx-auto backdrop-blur-sm bg-[rgba(255,255,255,0.1)] p-4 rounded-bl-2xl rounded-br-2xl h-60">
           <div className="flex flex-col gap-2">
