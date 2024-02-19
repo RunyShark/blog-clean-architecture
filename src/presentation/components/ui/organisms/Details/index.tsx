@@ -49,11 +49,11 @@ export const Details = () => {
         </div>
 
         <Image
-          className="w-1/2 h-120 bg-cover bg-center rounded-radius-2xl"
+          className="w-1/2 h-120 bg-cover bg-center rounded-radius-2xl object-contain overflow-hidden"
           src={imgUrl}
           alt="placeholder"
-          width={500}
-          height={500}
+          width={300}
+          height={300}
         />
       </div>
 
