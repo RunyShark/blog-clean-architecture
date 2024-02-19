@@ -1,11 +1,10 @@
 import { NextResponse } from 'next/server';
 import { v2 as cloudinary } from 'cloudinary';
 
-//!!These environment variables were left by mistake so that you can test; this is very bad practice, environment variables should be used.
 cloudinary.config({
-  cloud_name: 'runyshark1',
-  api_key: '633923928649864',
-  api_secret: 'WKJw8YKPsYhaPuARjxenNn5VA4g',
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
 export async function POST(req: any) {
@@ -22,6 +21,7 @@ export async function POST(req: any) {
   const response: any = await new Promise((resolve, reject) => {
     cloudinary.uploader
       .upload_stream({}, (err, result) => {
+        console.log(result);
         if (err) reject(err);
 
         resolve(result);

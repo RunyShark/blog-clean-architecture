@@ -5,7 +5,6 @@ interface Props {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  console.log('generateMetadata', params);
   try {
     return {
       title: `${decodeURIComponent(params.name)}`,
