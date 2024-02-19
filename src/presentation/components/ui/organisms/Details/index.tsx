@@ -13,9 +13,9 @@ export const Details = () => {
   );
   return (
     <div className="flex flex-col gap-16 mb-16 ">
-      <div className="flex gap-9 w-320 justify-between flex-col  items-center flex-col-reverse  md:flex-row md:items-center">
-        <div className="md:w-1/2">
-          <header className="h-full flex flex-col gap-10 justify-center">
+      <div className="flex gap-9 w-320 justify-between w-full">
+        <div className="w-1/2">
+          <header className="h-full flex flex-col gap-10 justify-center w-full">
             <Title className="font-bold">{title}</Title>
             <div>
               <div className="flex gap-2 flex-col">
@@ -41,10 +41,7 @@ export const Details = () => {
               </div>
             </div>
             <Link href="/">
-              <Button
-                className="w-full md:w-1/2"
-                iconLeft={<IoHome size={25} />}
-              >
+              <Button className="w-1/2" iconLeft={<IoHome size={25} />}>
                 Regresar al home
               </Button>
             </Link>
@@ -52,11 +49,11 @@ export const Details = () => {
         </div>
 
         <Image
-          className="w-96 md:w-1/2 h-120 bg-cover bg-center rounded-radius-2xl"
+          className="w-1/2 h-120 bg-cover bg-center rounded-radius-2xl object-contain overflow-hidden"
           src={imgUrl}
           alt="placeholder"
-          width={500}
-          height={500}
+          width={300}
+          height={300}
         />
       </div>
 
