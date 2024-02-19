@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from 'react';
 import { useAppDispatch } from '../store';
 import { setInternetConnectionState } from '../store/slices/web/web-slice';
