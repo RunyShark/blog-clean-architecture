@@ -10,5 +10,5 @@ import { initData } from './seedData';
     data: initData,
   });
 
-  console.log('Data seeded successfully! 🧙‍♂️ 🌱');
+  console.log('Data seeded successfully! 🧙‍♂️ 🌱 🚀');
 })();
